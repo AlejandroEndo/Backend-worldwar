@@ -8,6 +8,7 @@ var multer = require('multer');
 
 var db = require('./database');
 var users = require('./routes/user-router');
+var clasificados = require('./routes/clasificado-router');
 
 var app = express();
 
@@ -20,6 +21,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(multer({dest : './uploads/'}).single('photo'));
 
 app.use('/user', users);
+app.user('/clasificado', clasificados);
 
 db.poolConection(function (err) {
     if(err){
