@@ -19,6 +19,8 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(multer({dest : './uploads/'}).single('photo'));
 
+app.use('/user', users);
+
 db.poolConection(function (err) {
     if(err){
         console.log("Error al conectarse a la Base de datos");
