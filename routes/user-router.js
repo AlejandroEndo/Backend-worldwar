@@ -13,16 +13,20 @@ router.use(bodyparser.urlencoded({extended:false}));
 router.post('/login', function (req, res) {
     var nick = req.body.nick;
     var pass = req.body.pass;
+    console.log(req.body);
 
     if(nick == undefined || pass == undefined){
         res.redirect('/');
+        console.log("No llega nada.");
     } else {
         userControl.login(nick, pass, function (err, result) {
             if(!err) {
                 res.json(result);
+                res.redirect('localhost:5000');
                 console.log(result);
             } else {
                 res.json(err);
+                console.log(err);
             }
         });
     }
