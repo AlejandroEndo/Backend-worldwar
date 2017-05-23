@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(multer({dest : './uploads/'}).single('photo'));
 
 app.use('/user', users);
-app.user('/clasificado', clasificados);
+//app.use('/clasificado', clasificados);
 
 db.poolConection(function (err) {
     if(err){
