@@ -20,7 +20,7 @@ router.post('/login', function (req, res) {
         userControl.login(nick, pass, function (err, result) {
             if(!err) {
                 res.json(result);
-                //console.log(result);
+                console.log(result);
             } else {
                 res.json(err);
             }
