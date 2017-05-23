@@ -24,10 +24,9 @@ db.poolConection(function (err) {
         console.log("Error al conectarse a la Base de datos");
         process.exit(1);
     } else {
-        var host = 'localhost';
-        var port = 5000;
+        var port = process.env.PORT || 8080;
 
-        app.listen(port, host, function () {
+        app.listen(port, function () {
             console.log('Listening on || http://' + host + ':' + port + '/');
         });
     }
