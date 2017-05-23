@@ -21,8 +21,8 @@ router.post('/login', function (req, res) {
     } else {
         userControl.login(nick, pass, function (err, result) {
             if(!err) {
-                res.json(result);
-                res.redirect('localhost:5000');
+                //res.json(result);
+                res.redirect('localhost:5000/');
                 console.log(result);
             } else {
                 res.json(err);
